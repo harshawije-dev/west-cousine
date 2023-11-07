@@ -1,0 +1,15 @@
+{
+  "name": "west-cousine",
+  "version": "1.0.0",
+  "description": "test project for php oop",
+  "main": "index.php",
+  "scripts": {
+    "test": "run index"
+  },
+  "keywords": [
+    "php",
+    "OOP"
+  ],
+  "author": "Harshana Wijesinghe",
+  "license": "MIT"
+}
