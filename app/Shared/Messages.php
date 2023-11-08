@@ -1,6 +1,6 @@
 <?php
 
-namespace shared;
+namespace App\Shared;
 
 class Messages
 {

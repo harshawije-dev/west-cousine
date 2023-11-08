@@ -1,7 +1,5 @@
 <?php
 
-// const BASE_PATH = __DIR__ . '\UI';
+require __DIR__ . '/vendor/autoload.php';
 
-require 'UI/index.php';
-
-
+require __DIR__ . '/app/UI/views/home.view.php';

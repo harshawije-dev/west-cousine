@@ -11,5 +11,8 @@
     "OOP"
   ],
   "author": "Harshana Wijesinghe",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  }
 }

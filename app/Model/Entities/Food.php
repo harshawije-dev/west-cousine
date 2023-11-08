@@ -1,4 +1,4 @@
-<?php namespace entity;
+<?php namespace App\Model\Entities;
 
 class Food{
     private string $item_name;
