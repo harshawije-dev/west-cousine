@@ -32,7 +32,16 @@
         </form>
       </div>
     </div>
-    <div class="w-1/2 px-5"></div>
+    <div class="w-1/2 px-5">
+      <?php
+
+      use App\DataAccess\FoodsDTO\FoodItemOperation;
+
+      $db = new FoodItemOperation();
+      $data = $db->introFunction();
+      var_dump($data);
+      ?>
+    </div>
   </div>
 </body>
 

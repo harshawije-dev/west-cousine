@@ -8,26 +8,34 @@ use PDO;
 final class Connection
 {
 
-    protected mixed $connection;
+    private static $connection = null;
+    public static $instances = 0;
 
     private function __construct()
     {
+        // * Test case passed ✔✔
+        self::$instances++;
     }
 
     protected function setPDOConnection()
     {
         try {
-            $conn_string = new PDO("sqlite:" . __DIR__ . '/app/Model/Database/app.sqlite');
-            $conn_string->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            self::$connection = new PDO("sqlite:./app/Model/Database/app.sqlite");
+            self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $this->connection = $conn_string;
+            return self::$connection;
         } catch (\Throwable $error) {
-            return $error->__toString();
+            return $error;
         }
     }
 
-    protected function getPDOConnection()
+    public static function getSingletonConnection()
     {
-        return $this->connection;
+        if (self::$connection === null) {
+            $conn = new Connection();
+            return $conn->setPDOConnection();
+        } else {
+            return self::$connection;
+        }
     }
 }
