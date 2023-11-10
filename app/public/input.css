@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .form-control {
+    @apply px-5 py-3 border-[1px] border-blue-300 w-[400px] rounded-md;
+  }
+}
